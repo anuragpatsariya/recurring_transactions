@@ -25,7 +25,7 @@ app.post("/upsert_transactions", function(req,res){
 	MongoClient.connect(url, function(err, db) {
   		if (err) throw err;
   		var dbo = db.db("interview_challenge");
-  		//var myobj = { name: "Company Inc", address: "Highway 37" };
+  	
   		dbo.collection("transaction_history").insertOne(obj, function(err, res) {
     		if (err) throw err;
     		console.log("1 document inserted");
